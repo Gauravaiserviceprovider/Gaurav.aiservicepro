@@ -64,11 +64,6 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .features-list li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ddd; }
 .features-list i { color: var(--primary); margin-right: 10px; }
 
-/* --- Trust Box --- */
-.trust-box { border: 1px dashed var(--primary); background: rgba(0, 242, 255, 0.05); padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-.trust-title { font-size: 1.1rem; font-weight: bold; }
-.highlight { color: var(--primary); font-size: 1.2rem; }
-.trust-desc { font-size: 0.85rem; color: #aaa; margin-top: 5px; }
 .pay-btn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(45deg, var(--secondary), var(--primary)); color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; text-decoration: none; text-align: center; }
 .pay-btn:hover { filter: brightness(1.2); }
 
@@ -102,4 +97,4 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     .nav-links.active { right: 0; }
     .hamburger { display: block; }
     .hero-content h1 { font-size: 2.5rem; }
-             }
+            }
