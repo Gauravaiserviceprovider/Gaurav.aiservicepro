@@ -13,14 +13,14 @@
 
 body { background-color: var(--dark-bg); color: var(--text); overflow-x: hidden; }
 
-/* --- Background Animation --- */
+/* Background */
 .background-blobs { position: fixed; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
 .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.3; }
 .blob-1 { width: 400px; height: 400px; background: var(--secondary); top: -10%; left: -10%; animation: float 10s infinite alternate; }
 .blob-2 { width: 500px; height: 500px; background: var(--primary); bottom: -10%; right: -10%; animation: float 12s infinite alternate-reverse; }
 @keyframes float { to { transform: translate(50px, 50px); } }
 
-/* --- Navigation --- */
+/* Navigation */
 nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(10px); border-bottom: var(--border); }
 .logo { font-size: 1.5rem; font-weight: 700; }
 .glow-text { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
@@ -29,14 +29,14 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .nav-links a:hover { color: var(--primary); }
 .hamburger { display: none; font-size: 1.5rem; cursor: pointer; }
 
-/* --- Hero Section --- */
+/* Hero */
 .hero-section { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
 .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
 .glow-text-lg { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; color: transparent; }
 .cta-button { display: inline-block; padding: 12px 30px; background: white; color: black; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
 .cta-button:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
 
-/* --- Pricing Card --- */
+/* Pricing */
 .pricing-section { padding: 100px 20px; text-align: center; }
 .pricing-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 50px; }
 
@@ -63,38 +63,45 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .features-list { list-style: none; text-align: left; margin-bottom: 25px; }
 .features-list li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: #ddd; }
 .features-list i { color: var(--primary); margin-right: 10px; }
-
 .pay-btn { display: block; width: 100%; padding: 15px; border: none; border-radius: 10px; background: linear-gradient(45deg, var(--secondary), var(--primary)); color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: 0.3s; text-decoration: none; text-align: center; }
 .pay-btn:hover { filter: brightness(1.2); }
 
-/* --- Payment Page Specifics --- */
+/* Payment Page Specifics */
 .payment-wrapper { min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
-.payment-card { max-width: 500px; }
+.payment-card { max-width: 500px; text-align: center; }
 .back-link { display: block; text-align: left; color: #888; text-decoration: none; margin-bottom: 20px; font-size: 0.9rem; }
 .back-link:hover { color: var(--primary); }
-.sub-text { color: #ccc; margin-bottom: 25px; font-size: 0.9rem; }
+
+/* Alert Box Style */
+.alert-box {
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid orange;
+    color: #ffcc00;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    text-align: left;
+    line-height: 1.4;
+}
+.alert-box i { font-size: 1.2rem; margin-top: 3px; }
 
 .amount-toggle { display: flex; background: rgba(255,255,255,0.05); border-radius: 10px; padding: 5px; margin-bottom: 25px; }
 .toggle-btn { flex: 1; padding: 10px; border: none; background: transparent; color: #888; cursor: pointer; border-radius: 8px; font-weight: 600; transition: 0.3s; }
 .toggle-btn.active { background: var(--primary); color: #000; box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
 
 .qr-frame { background: white; padding: 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
-.qr-frame img { width: 200px; height: 200px; display: block; }
-.upi-id { margin-top: 10px; font-family: monospace; background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px; display: inline-block; font-size: 0.9rem; }
+.qr-frame img { width: 250px; height: auto; display: block; }
+.highlight { color: var(--primary); font-weight: bold; }
+.small-text { margin-bottom: 10px; color: #aaa; }
 
-.form-group { text-align: left; margin-bottom: 15px; }
-.form-group label { display: block; font-size: 0.85rem; color: var(--primary); margin-bottom: 5px; margin-left: 5px; }
-.form-group input { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; outline: none; transition: 0.3s; }
-.form-group input:focus { border-color: var(--primary); background: rgba(255,255,255,0.1); }
-
-.divider { display: flex; align-items: center; text-align: center; margin: 20px 0; color: #666; font-size: 0.8rem; }
-.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid rgba(255,255,255,0.1); }
-.divider span { padding: 0 10px; }
-
-/* --- Mobile Responsive --- */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-links { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: #000; flex-direction: column; justify-content: center; transition: 0.3s; border-left: 1px solid #333; }
     .nav-links.active { right: 0; }
     .hamburger { display: block; }
     .hero-content h1 { font-size: 2.5rem; }
-            }
+             }
