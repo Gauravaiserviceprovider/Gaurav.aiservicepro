@@ -1,32 +1,22 @@
-// ==========================================
-// ⚙️ CONFIGURATION (Yahan Edit Karein)
-// ==========================================
 const config = {
-    // Apna WhatsApp Number yahan likhein (91 ke sath)
-    whatsapp_number: "+91 7509 5424 82" 
+    whatsapp_number: "919876543210" // Apna number yahan check kar lein
 };
 
-// ==========================================
-// 🚀 LOGIC (Isse mat chedein)
-// ==========================================
-
-// 1. Mobile Menu Toggle
 function toggleMenu() {
     const nav = document.getElementById('navLinks');
     if(nav) nav.classList.toggle('active');
 }
 
-// 2. Payment Page Logic (Image Switcher)
 let currentAmount = 51;
 
 function setAmount(amount) {
     currentAmount = amount;
     
-    // Text Update karega
+    // Text Update
     const displayEl = document.getElementById('displayAmount');
     if(displayEl) displayEl.innerText = "₹" + amount;
     
-    // Buttons ko highlight karega
+    // Button Highlight
     const btn51 = document.getElementById('btn-51');
     const btn1499 = document.getElementById('btn-1499');
     
@@ -41,18 +31,18 @@ function setAmount(amount) {
         }
     }
 
-    // Image Change karega (Folder se photo uthayega)
+    // Image Change Logic
     const qrImage = document.getElementById('qrImage');
     if(qrImage) {
-        if(amount === 51) {
-            qrImage.src = "qr-51.jpg"; // 51 wali photo
+        if(amount === 1499) {
+            // Yahan file ka naam wahi hona chahiye jo repo me hai
+            qrImage.src = "qr-1499.jpg"; 
         } else {
-            qrImage.src = "qr-1499.jpg"; // 1499 wali photo
+            qrImage.src = "qr-51.jpg";
         }
     }
 }
 
-// 3. WhatsApp Button Logic
 function openWhatsApp() {
     const message = `Hello Gaurav, I have paid ₹${currentAmount}. Here is the screenshot and my details (Email/Phone).`;
     const url = `https://wa.me/${config.whatsapp_number}?text=${encodeURIComponent(message)}`;
