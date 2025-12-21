@@ -1,16 +1,13 @@
 // ==========================================
-// ⚙️ CONFIGURATION (EDIT THIS)
+// ⚙️ CONFIGURATION (Yahan Edit Karein)
 // ==========================================
 const config = {
-    // Aapki UPI ID (Image se li gayi hai)
-    upi_id: "sauravvarmag8@oksbi", 
-    
-    // Yahan apna WhatsApp number daalein (Country code 91 ke sath)
-    whatsapp_number: "75091542482" 
+    // Apna WhatsApp Number yahan likhein (91 ke sath)
+    whatsapp_number: "+91 7509 5424 82" 
 };
 
 // ==========================================
-// 🚀 LOGIC (DO NOT EDIT BELOW)
+// 🚀 LOGIC (Isse mat chedein)
 // ==========================================
 
 // 1. Mobile Menu Toggle
@@ -19,17 +16,17 @@ function toggleMenu() {
     if(nav) nav.classList.toggle('active');
 }
 
-// 2. Payment Page Logic
+// 2. Payment Page Logic (Image Switcher)
 let currentAmount = 51;
 
 function setAmount(amount) {
     currentAmount = amount;
     
-    // Update UI Text
+    // Text Update karega
     const displayEl = document.getElementById('displayAmount');
     if(displayEl) displayEl.innerText = "₹" + amount;
     
-    // Update Buttons
+    // Buttons ko highlight karega
     const btn51 = document.getElementById('btn-51');
     const btn1499 = document.getElementById('btn-1499');
     
@@ -44,41 +41,20 @@ function setAmount(amount) {
         }
     }
 
-    // Generate New QR Code
-    const qrImage = document.getElementById('dynamicQR');
+    // Image Change karega (Folder se photo uthayega)
+    const qrImage = document.getElementById('qrImage');
     if(qrImage) {
-        // This API creates a QR code containing your UPI payment link
-        const qrData = `upi://pay?pa=${config.upi_id}&pn=SauravVerma&am=${amount}&tn=Service_Payment`;
-        qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrData)}`;
+        if(amount === 51) {
+            qrImage.src = "qr-51.jpg"; // 51 wali photo
+        } else {
+            qrImage.src = "qr-1499.jpg"; // 1499 wali photo
+        }
     }
 }
 
-// 3. Send Form Data to WhatsApp
-function sendToWhatsApp(e) {
-    e.preventDefault(); // Stop page reload
-
-    // Get values
-    const userPhone = document.getElementById('userPhone').value;
-    const userEmail = document.getElementById('userEmail').value;
-    const accEmail = document.getElementById('accountEmail').value;
-    const accPass = document.getElementById('accountPass').value;
-
-    // Create Message
-    const message = `
-*NEW ORDER PAYMENT* 
----------------------
-*Amount Selected:* ₹${currentAmount}
-*My WhatsApp:* ${userPhone}
-*My Email:* ${userEmail}
-
-*ACCOUNT DETAILS FOR SETUP:*
-*Email:* ${accEmail}
-*Password:* ${accPass}
-
-Please verify payment and activate service.
-    `.trim();
-
-    // Open WhatsApp
+// 3. WhatsApp Button Logic
+function openWhatsApp() {
+    const message = `Hello Gaurav, I have paid ₹${currentAmount}. Here is the screenshot and my details (Email/Phone).`;
     const url = `https://wa.me/${config.whatsapp_number}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
