@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GauravAi | Next Gen Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="logo">Gaurav<span class="glow-text">Ai</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing" class="btn-highlight">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Unlock the Future with <br><span class="glow-text-lg">GauravAi</span></h1>
+            <p>Experience the raw power of Gemini Ultra Pro & Veo3. Unlimited generation. Zero Limits. The ultimate AI infrastructure for creators and developers.</p>
+            <a href="#pricing" class="cta-button">Get Access Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2 class="section-title">Why Choose <span class="text-gradient">GauravAi?</span></h2>
+        <div class="cards-container">
+            <div class="glass-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Gemini Ultra Pro</h3>
+                <p>Access the most capable AI model with 45,000+ monthly credits included.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fa-solid fa-video"></i>
+                <h3>Unlimited Veo3</h3>
+                <p>Generate high-definition videos without limits. No waiting queues.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Zero API Limits</h3>
+                <p>Direct integration with no rate limiting. Build faster, create more.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <h2 class="section-title">Select Your Power</h2>
+        <div class="pricing-container">
+            
+            <!-- Plan 1: Trial -->
+            <div class="price-card glass-card">
+                <div class="badge">Refundable*</div>
+                <h3>1 Hour Access</h3>
+                <div class="price">₹11 <span class="duration">/ hour</span></div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Full Platform Access</li>
+                    <li><i class="fa-solid fa-check"></i> Test Speed & Quality</li>
+                    <li><i class="fa-solid fa-check"></i> *Refundable on Plan Upgrade</li>
+                    <li><i class="fa-solid fa-check"></i> Instant Activation</li>
+                </ul>
+                <button class="pay-btn" onclick="openPayment('11', '1 Hour Trial')">Buy Now</button>
+            </div>
+
+            <!-- Plan 2: Pro -->
+            <div class="price-card glass-card pro-card">
+                <div class="badge best-value">Best Value</div>
+                <div class="glow-border"></div>
+                <h3>Ultimate Month</h3>
+                <div class="price">₹999 <span class="duration">/ month</span></div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> <strong>Gemini Ultra Pro Access</strong></li>
+                    <li><i class="fa-solid fa-check"></i> <strong>45,000+ Credits</strong></li>
+                    <li><i class="fa-solid fa-check"></i> <strong>Unlimited Veo3 Video Gen</strong></li>
+                    <li><i class="fa-solid fa-check"></i> No API Restrictions</li>
+                    <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                </ul>
+                <button class="pay-btn primary-btn" onclick="openPayment('999', 'Monthly Subscription')">Subscribe Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 GauravAi. All rights reserved.</p>
+        <p>Reliable. Secure. Advanced.</p>
+    </footer>
+
+    <!-- Payment Modal (Hidden by default) -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-glass">
+            <span class="close-btn" onclick="closePayment()">&times;</span>
+            <h2>Complete Payment</h2>
+            <p>Scan to pay for: <span id="planName" class="highlight"></span></p>
+            <div class="amount-display">₹<span id="payAmount">0</span></div>
+            
+            <div class="qr-container">
+                <!-- REPLACE 'qr-code.jpg' WITH YOUR ACTUAL QR IMAGE FILE -->
+                <img src="qr-code.jpg" alt="UPI QR Code" class="qr-image">
+                <p class="upi-id">UPI ID: gaurav@upi</p> <!-- Change this -->
+            </div>
+
+            <div class="instructions">
+                <p>1. Scan QR with GPay/PhonePe/Paytm.</p>
+                <p>2. Complete the payment.</p>
+                <p>3. <strong>Important:</strong> Click below to verify on WhatsApp.</p>
+            </div>
+
+            <!-- Link this to your WhatsApp number -->
+            <a href="https://wa.me/919999999999?text=I%20have%20paid%20for%20GauravAi%20plan" target="_blank" class="verify-btn">
+                <i class="fa-brands fa-whatsapp"></i> Verify Payment
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
