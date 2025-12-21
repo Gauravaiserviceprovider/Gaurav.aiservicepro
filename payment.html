@@ -20,7 +20,6 @@
             
             <h2>Scan & Pay</h2>
             
-            <!-- AAPKA MESSAGE -->
             <div class="alert-box">
                 <i class="fa-solid fa-circle-info"></i>
                 <p>After payment you will be given service but you have to send your Gmail and WhatsApp number when you pay via UPI (in payment note) or send screenshot on WhatsApp.</p>
@@ -35,13 +34,12 @@
             <!-- QR Code Image Section -->
             <div class="qr-section">
                 <div class="qr-frame">
-                    <!-- Ye Image aapke folder se load hogi -->
+                    <!-- Default image 51 hai, JS isko change karega -->
                     <img id="qrImage" src="qr-51.jpg" alt="Payment QR Code">
                 </div>
                 <div class="scan-text">Pay exactly <span id="displayAmount" class="highlight">₹51</span></div>
             </div>
 
-            <!-- WhatsApp Button -->
             <div class="action-area">
                 <p class="small-text">Payment Done?</p>
                 <button onclick="openWhatsApp()" class="pay-btn primary-btn">
@@ -52,12 +50,16 @@
         </div>
     </div>
 
+    <!-- DHYAN DEIN: Yahan 'script.js' small letters mein hona chahiye -->
     <script src="script.js"></script>
+    
     <script>
-        // Ye code check karega ki user ne kaunsa button dabaya tha
+        // Ye chhota script ensure karega ki page load hote hi sahi QR dikhe
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const amount = urlParams.get('amount');
+            
+            // Agar URL me 1499 hai to 1499 wala function chalaye
             if(amount === '1499') {
                 setAmount(1499);
             } else {
