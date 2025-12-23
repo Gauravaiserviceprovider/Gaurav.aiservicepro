@@ -105,21 +105,22 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     .hamburger { display: block; }
     .hero-content h1 { font-size: 2.5rem; }
              }
-/* --- Video Slider Section --- */
+/* --- Video Slider Section (Mobile Fixed) --- */
 .video-section {
-    padding: 50px 20px;
+    padding: 40px 0;
     text-align: center;
     overflow: hidden;
 }
 
 .slider-container {
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    /* Height hata di aur ye ratio laga diya */
-    aspect-ratio: 16 / 9; 
+    width: 90%; /* Mobile par side mein jagah rahegi */
+    max-width: 600px; /* Laptop par zyada bada nahi hoga */
+    aspect-ratio: 16 / 9; /* Perfect YouTube Ratio */
     margin: 0 auto;
-    perspective: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    background: #000;
 }
 
 .video-card {
@@ -128,31 +129,24 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 2px solid var(--primary);
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
-    opacity: 0;
-    transform: scale(0.8) translateX(100px); /* Start position */
-    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth Slide Effect */
-    pointer-events: none; /* Click disable jab active na ho */
-    background: #000;
+    opacity: 0; /* By default chhupa rahega */
+    transition: opacity 1s ease-in-out; /* Smooth Fade Effect */
+    pointer-events: none;
 }
 
-/* Jab Card Active Hoga */
+/* Jab Active hoga tab dikhega */
 .video-card.active-slide {
     opacity: 1;
-    transform: scale(1) translateX(0);
     z-index: 10;
-    box-shadow: 0 0 40px var(--primary);
-    pointer-events: all; /* Ab click kar sakte hain */
+    pointer-events: all;
 }
 
 .video-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
+    object-fit: cover; /* Box ko pura bharega bina ratio bigade */
+    border-radius: 15px;
+    border: 2px solid var(--primary);
 }
 
 /* Play Button Overlay */
@@ -162,31 +156,23 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.video-card:hover .play-overlay {
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
 }
 
 .play-overlay i {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #ff0000;
-    filter: drop-shadow(0 0 10px #ff0000);
-    margin-bottom: 10px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
 }
-
-.play-overlay p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    }
