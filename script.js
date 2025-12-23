@@ -1,12 +1,22 @@
+// ==========================================
+// ⚙️ CONFIGURATION
+// ==========================================
 const config = {
-    whatsapp_number: "918989925852" // Apna number yahan check kar lein
+    // Aapka Sahi WhatsApp Number (91 ke sath)
+    whatsapp_number: "918989925852" 
 };
 
+// ==========================================
+// 🚀 LOGIC
+// ==========================================
+
+// 1. Mobile Menu Toggle
 function toggleMenu() {
     const nav = document.getElementById('navLinks');
     if(nav) nav.classList.toggle('active');
 }
 
+// 2. Payment Page Logic
 let currentAmount = 51;
 
 function setAmount(amount) {
@@ -35,21 +45,22 @@ function setAmount(amount) {
     const qrImage = document.getElementById('qrImage');
     if(qrImage) {
         if(amount === 1499) {
-            // Yahan file ka naam wahi hona chahiye jo repo me hai
             qrImage.src = "qr-1499.jpg"; 
         } else {
-            qrImage.src = "qr-51.jpg";
+            qrImage.src = "qr-51.jpg"; 
         }
     }
 }
 
+// 3. WhatsApp Button Logic
 function openWhatsApp() {
     const message = `Hello Gaurav, I have paid ₹${currentAmount}. Here is the screenshot and my details (Email/Phone).`;
     const url = `https://wa.me/${config.whatsapp_number}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
+
 // ==========================================
-// 🎥 VIDEO SLIDER LOGIC (Simple & Robust)
+// 🎥 VIDEO SLIDER LOGIC
 // ==========================================
 const slides = document.querySelectorAll('.video-card');
 let slideIndex = 0;
