@@ -48,3 +48,29 @@ function openWhatsApp() {
     const url = `https://wa.me/${config.whatsapp_number}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
+//==========================================
+// 🎥 VIDEO SLIDER LOGIC
+// ==========================================
+let currentSlide = 0;
+const slides = document.querySelectorAll('.video-card');
+
+function changeSlide() {
+    // Sabse 'active-slide' class hatao
+    slides.forEach(slide => {
+        slide.classList.remove('active-slide');
+    });
+
+    // Next slide par jao
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+        currentSlide = 0; // Wapas pehle par aa jao
+    }
+
+    // Naye slide ko active karo
+    slides[currentSlide].classList.add('active-slide');
+}
+
+// Har 3000ms (3 seconds) mein changeSlide function chalao
+if(slides.length > 0) {
+    setInterval(changeSlide, 3000);
+}
