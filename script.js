@@ -1,5 +1,5 @@
 const config = {
-    whatsapp_number: "919876543210" // Apna number yahan check kar lein
+    whatsapp_number: "918989925852" // Apna number yahan check kar lein
 };
 
 function toggleMenu() {
