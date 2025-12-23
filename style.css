@@ -115,8 +115,9 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .slider-container {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Mobile par size control karega */
-    height: 340px; /* Height fix taaki layout na hile */
+    max-width: 600px;
+    /* Height hata di aur ye ratio laga diya */
+    aspect-ratio: 16 / 9; 
     margin: 0 auto;
     perspective: 1000px;
 }
