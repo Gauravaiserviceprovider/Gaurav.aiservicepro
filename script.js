@@ -48,29 +48,35 @@ function openWhatsApp() {
     const url = `https://wa.me/${config.whatsapp_number}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
-//==========================================
-// 🎥 VIDEO SLIDER LOGIC
 // ==========================================
-let currentSlide = 0;
+// 🎥 VIDEO SLIDER LOGIC (Simple & Robust)
+// ==========================================
 const slides = document.querySelectorAll('.video-card');
+let slideIndex = 0;
 
-function changeSlide() {
-    // Sabse 'active-slide' class hatao
+function showSlides() {
+    // Agar slides nahi mili to code mat chalao
+    if (slides.length === 0) return;
+
+    // Sabhi slides ko chhupa do
     slides.forEach(slide => {
         slide.classList.remove('active-slide');
     });
 
     // Next slide par jao
-    currentSlide++;
-    if (currentSlide >= slides.length) {
-        currentSlide = 0; // Wapas pehle par aa jao
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
     }
 
-    // Naye slide ko active karo
-    slides[currentSlide].classList.add('active-slide');
+    // Current slide ko dikhao
+    slides[slideIndex - 1].classList.add('active-slide');
 }
 
-// Har 3000ms (3 seconds) mein changeSlide function chalao
-if(slides.length > 0) {
-    setInterval(changeSlide, 3000);
+// Har 3 second mein change karo
+if (slides.length > 0) {
+    // Pehli slide turant dikhao
+    slides[0].classList.add('active-slide');
+    // Timer shuru karo
+    setInterval(showSlides, 3000);
 }
