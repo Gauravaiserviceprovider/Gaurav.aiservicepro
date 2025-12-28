@@ -30,14 +30,14 @@ function setAmount(amount) {
     const btn51 = document.getElementById('btn-51');
     const btn2000 = document.getElementById('btn-2000');
     
-    if(btn51 && btn1499) {
+    if(btn51 && btn2000) {
         btn51.classList.remove('active');
         btn1499.classList.remove('active');
         
         if(amount === 51) {
             btn51.classList.add('active');
         } else {
-            btn1499.classList.add('active');
+            btn2000.classList.add('active');
         }
     }
 
