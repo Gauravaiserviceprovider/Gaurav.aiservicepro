@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - Gaurav AI</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,13 +17,16 @@
 
     <div class="payment-wrapper">
         <div class="glass-card payment-card">
-            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
-            
+
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+
             <h2>Scan & Pay</h2>
-            
+
             <div class="alert-box">
                 <i class="fa-solid fa-circle-info"></i>
-                <p>“Make the payment by scanning the ₹51 trust payment QR code given below, then click on ‘Send Screenshot on WhatsApp’ and share the payment screenshot.”</p>
+                <p>Make the payment by scanning the ₹51 trust payment QR code given below, then click on "Send Screenshot"</p>
             </div>
 
             <!-- Amount Buttons -->
@@ -37,24 +41,39 @@
                     <!-- Default image 51 hai, JS isko change karega -->
                     <img id="qrImage" src="qr-51.jpg" alt="Payment QR Code">
                 </div>
-                <div class="scan-text">Pay exactly <span id="displayAmount" class="highlight">₹51</span></div>
-            
+
+                <div class="scan-text">
+                    Pay exactly <span id="displayAmount" class="highlight">₹51</span>
+                </div>
+            </div>
+
+            <div class="action-area">
+                <p class="small-text">Payment Done?</p>
+                <button onclick="openWhatsApp()" class="pay-btn primary-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Send Screenshot on WhatsApp
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <!-- DHYAN DEIN: Yahan 'script.js' small letters mein hona chahiye -->
     <script src="script.js"></script>
-    
+
     <script>
         // Ye chhota script ensure karega ki page load hote hi sahi QR dikhe
-        window.onload = function() {
+        window.onload = function () {
             const urlParams = new URLSearchParams(window.location.search);
             const amount = urlParams.get('amount');
-            
-            // Agar URL me 1499 hai to 1499 wala function chalaye
-            if(amount === '1499') {
+
+            // Agar URL me 1499 hai to 1499 wala function chale
+            if (amount === '1499') {
                 setAmount(1499);
             } else {
                 setAmount(51);
             }
         };
     </script>
+
 </body>
 </html>
