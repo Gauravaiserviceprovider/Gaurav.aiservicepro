@@ -28,7 +28,7 @@ function setAmount(amount) {
     
     // Button Highlight
     const btn51 = document.getElementById('btn-51');
-    const btn1499 = document.getElementById('btn-1499');
+    const btn2000 = document.getElementById('btn-2000');
     
     if(btn51 && btn1499) {
         btn51.classList.remove('active');
