@@ -30,7 +30,7 @@ function setAmount(amount) {
     const btn51 = document.getElementById('btn-51');
     const btn1499 = document.getElementById('btn-1499');
     
-    if(btn51 && btn1499) {
+    if(btn51 && btn3000) {
         btn51.classList.remove('active');
         btn1499.classList.remove('active');
         
@@ -44,7 +44,7 @@ function setAmount(amount) {
     // Image Change Logic
     const qrImage = document.getElementById('qrImage');
     if(qrImage) {
-        if(amount === 1499) {
+        if(amount === 3000) {
             qrImage.src = "qr-1499.jpg"; 
         } else {
             qrImage.src = "qr-51.jpg"; 
