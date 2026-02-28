@@ -26,7 +26,7 @@
 
             <div class="alert-box">
                 <i class="fa-solid fa-circle-info"></i>
-                <p>“Make the payment by scanning the ₹1499 full payment QR code given below, then click on ‘Send Screenshot on WhatsApp’ and share the payment screenshot.”"</p>
+                <p>“Make the payment by scanning the ₹3000 full payment QR code given below, then click on ‘Send Screenshot on WhatsApp’ and share the payment screenshot.”"</p>
             </div>
             <!-- Offer Glass Box -->
             <!-- Offer Glass Box -->
@@ -38,7 +38,7 @@
             <!-- Amount Buttons -->
             <div class="amount-toggle">
                 <button class="toggle-btn" id="btn-51" onclick="setAmount(51)">₹51 (Trust)</button>
-                <button class="toggle-btn" id="btn-1499" onclick="setAmount(1499)">₹1499 (Full)</button>
+                <button class="toggle-btn" id="btn-3000" onclick="setAmount(1499)">₹3000 (Full)</button>
             </div>
 
             <!-- QR Code Image Section -->
@@ -73,8 +73,8 @@
             const amount = urlParams.get('amount');
 
             // Agar URL me 1499 hai to 1499 wala function chale
-            if (amount === '1499') {
-                setAmount(1499);
+            if (amount === '3000') {
+                setAmount(3000);
             } else {
                 setAmount(51);
             }
